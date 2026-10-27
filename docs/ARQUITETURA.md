@@ -80,9 +80,17 @@ config/mapeamento.yaml
 tests/
 ```
 
-## 3. O que precisamos do JCV
+## 3. Análise do RELATORIO.CSV (27/10/2026)
 
-1. **Exemplo do CSV diário** (pode ser com dados fictícios, mas com o mesmo cabeçalho, separador e codificação).
+- 13.775 linhas, 42 colunas, 10.315 clientes distintos. Cada cliente tem um único endereço.
+- As linhas se repetem por sócio (1.114 linhas idênticas) e por imóvel (12.520 combinações cliente + imóvel).
+- O arquivo não traz dados do boleto (vencimento, valor, nosso número); a etiqueta usa só o cadastro.
+- 60 clientes ficam de fora por erro de cadastro (42 CEP inválido, 19 UF, 17 cidade, 5 endereço).
+- `DATA_CADASTRO` vai de 2013 a 2026: parece ser a base completa, não só quem recebe boleto no dia.
+
+## 4. O que precisamos do JCV
+
+1. ~~Exemplo do CSV diário~~ (recebido).
 2. **Dados do VIPP**: confirmar se há acesso ao Web Service (usuário + token + Id do perfil de
    importação). Não enviar senha pelo chat; vamos configurar como segredo do ambiente.
 3. **Serviço dos Correios** usado para os boletos (ex.: Carta Comercial Registrada, Impresso, PAC) e

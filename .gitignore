@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+saida/
+# dados reais de clientes (LGPD): nunca versionar
+*.CSV
+dados/
+!tests/dados/*.csv
